@@ -67,15 +67,15 @@ public class Controller {
 
                 //checks if system supports the data line
                 if (!AudioSystem.isLineSupported(info)) {
-                    System.out.println("DUPA, NIE MA WSPARCIA LINII PRZESYLOWEJ");
+                    System.err.println("DUPA, NIE MA WSPARCIA LINII PRZESYLOWEJ");
                     System.exit(0);
                 }
                 dataLine = (TargetDataLine) AudioSystem.getLine(info);
                 dataLine.open(audioFormat);
                 dataLine.start();
-                System.out.println("Start capturing...");
+                //System.out.println("Start capturing...");
                 AudioInputStream ais = new AudioInputStream(dataLine);
-                System.out.println("Start recording...");
+                //System.out.println("Start recording...");
                 AudioSystem.write(ais, fileType, wavFile);
             } catch (LineUnavailableException | IOException e) {
                 e.printStackTrace();
@@ -88,7 +88,7 @@ public class Controller {
         public void run() {
             dataLine.stop();
             dataLine.close();
-            System.out.println("Recording done");
+            //System.out.println("Recording done");
         }
     }
 
