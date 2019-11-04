@@ -22,19 +22,54 @@
         </rowConstraints>
          <children>
             <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#flyMyBoy">
-                <graphic>
-                    <ImageView fitHeight="127.0" fitWidth="284.0" pickOnBounds="true">
-                        <image>
-                            <Image url="@../coke_render2.png" />
-                        </image>
-                    </ImageView>
-                </graphic>
+               <graphic>
+                  <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../coke_render2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#flyMyBoy" text="b2" GridPane.columnIndex="1" />
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#flyMyBoy" text="b3" GridPane.rowIndex="1" />
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#flyMyBoy" text="b4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#flyMyBoy" text="b5" GridPane.rowIndex="2" />
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#flyMyBoy" text="b6" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#flyMyBoy" GridPane.columnIndex="1">
+               <graphic>
+                  <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../hersheys.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#flyMyBoy" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../maltesers.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#flyMyBoy" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../kitkat.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#flyMyBoy" GridPane.rowIndex="2">
+               <graphic>
+                  <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../popcorn.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#flyMyBoy" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <graphic>
+                  <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pepsi.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
       </GridPane>
    </children>

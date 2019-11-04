@@ -1,10 +1,9 @@
 package sample;
 
-import javafx.animation.PathTransition;
-import javafx.animation.ScaleTransition;
-import javafx.animation.SequentialTransition;
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Point3D;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -12,7 +11,10 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
+
+import java.util.Random;
 
 public class Controller {
     @FXML
@@ -23,8 +25,8 @@ public class Controller {
         Button bt = (Button) e.getSource();
         Rectangle rect = new Rectangle();
         ImageView imageView = (ImageView)bt.getChildrenUnmodifiable().get(0);
-        rect.setX(imageView.getLayoutX());
-        rect.setY(imageView.getLayoutY());
+        rect.setLayoutX(imageView.getLayoutX() + bt.getLayoutX());
+        rect.setLayoutY(imageView.getLayoutY() + bt.getLayoutY());
         rect.setWidth(imageView.getFitWidth());
         rect.setHeight(imageView.getFitHeight());
 
@@ -45,7 +47,15 @@ public class Controller {
         pathTransition.setPath(line);
         pathTransition.setNode(rect);
 
-        SequentialTransition sequentialTransition = new SequentialTransition(st, pathTransition);
+        Random random = new Random();
+        RotateTransition rotateTransition = new RotateTransition();
+        rotateTransition.setNode(rect);
+        rotateTransition.setAxis(Rotate.Z_AXIS);
+        rotateTransition.setByAngle(random.nextDouble() * 180.0 - 90.0);
+        rotateTransition.setDuration(Duration.seconds(1));
+        ParallelTransition parallelTransition = new ParallelTransition(pathTransition, rotateTransition);
+
+        SequentialTransition sequentialTransition = new SequentialTransition(st, parallelTransition);
         sequentialTransition.play();
     }
 }
