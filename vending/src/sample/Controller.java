@@ -7,6 +7,8 @@ import javafx.geometry.Point3D;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Line;
@@ -17,8 +19,15 @@ import javafx.util.Duration;
 import java.util.Random;
 
 public class Controller {
+
     @FXML
-    private Pane rootPane;
+    private Pane subPane;
+
+    @FXML
+    private Pane nextPane;
+
+    @FXML
+    private Pane hiddenPane;
 
     @FXML
     private void flyMyBoy(ActionEvent e) {
@@ -32,15 +41,15 @@ public class Controller {
 
         Image image = imageView.getImage();
         rect.setFill(new ImagePattern(image));
-        rootPane.getChildren().add(rect);
+        nextPane.getChildren().add(rect);
+        double xStart = rect.getX() + rect.getWidth() / 2;
+        double yStart = rect.getY() + rect.getHeight() / 2;
+        double yEnd = yStart + subPane.getHeight() - bt.getLayoutY();
 
-        ScaleTransition st = new ScaleTransition(Duration.seconds(3), rect);
+        ScaleTransition st = new ScaleTransition(Duration.seconds(2), rect);
         st.setToX(1.1);
         st.setToY(1.1);
 
-        double xStart = rect.getX() + rect.getWidth() / 2;
-        double yStart = rect.getY() + rect.getHeight() / 2;
-        double yEnd = yStart + rootPane.getHeight() + rect.getHeight() / 2;
         Line line = new Line(xStart, yStart, xStart, yEnd);
         PathTransition pathTransition = new PathTransition();
         pathTransition.setDuration(Duration.seconds(1));
@@ -57,5 +66,15 @@ public class Controller {
 
         SequentialTransition sequentialTransition = new SequentialTransition(st, parallelTransition);
         sequentialTransition.play();
+    }
+
+    @FXML
+    public void showMeThatSnacks() {
+        hiddenPane.setVisible(false);
+    }
+
+    @FXML
+    public void hideSnacks() {
+        hiddenPane.setVisible(true);
     }
 }
