@@ -51,7 +51,7 @@ public class Controller {
 
     private AudioFormat getAudioFormat() {
         float sampleRate = 16000;
-        int sampleSizeInBits = 16;
+        int sampleSizeInBits = 8;
         int channels = 1;
         boolean signed = true;
         boolean bigEndian = true;
